@@ -11,7 +11,10 @@ curl -s --http2 -G https://mongol.brono.com/mongol/api.php?commandname=get_units
 
 The output will look like the following
 ```
-[{"unitnumber":"1234567","name":"538ZFDZ00ABC12345","address":"+1","vehiclemodel":"","vehiclecolor":"","unittype":"5","icon":"0","active":"1","unitmodel":"6","regnumber":"","platenumber":null,"custom":[]}]
+[{"unitnumber":"1234567","name":"538ZFDZ00ABC12345","address":"+1",
+"vehiclemodel":"","vehiclecolor":"","unittype":"5","icon":"0",
+"active":"1","unitmodel":"6","regnumber":"","platenumber":null,
+"custom":[]}]
 ```
 Make a record of your unit number.
 
@@ -20,15 +23,27 @@ Make a record of your unit number.
 Test the REST API:
 
 ```
-curl -s --http2 -G https.php?commandname=get_last_transmit -d format=json -d user=<your username> -d pass=<your password> -d unitnumber=<your unit number>
+curl -s --http2 -G https.php?commandname=get_last_transmit -d format=json \
+     -d user=<your username> -d pass=<your password> -d unitnumber=<your unit number>
 ```
 
 Ensure you receive a reply similar to the following:
 
 ```
-[{"unitnumber":"1234567", "name":"538ZFDZ00ABC12345", "unittype":"5", "unitmodel":"6", "analog1":0.09, "analog2":0.09, "mileage":"12345.6", "software_version":"221208", "logic_state":"1", "reason":"5", "response":"0", "driver":"0", "longitude":-74.5678, "latitude":45.6789, "altitude":"123", "gps_valid":"1", "gps_connected":"1", "satellites":"7", "velocity":"0", "heading":"110", "emergency":"0", "shock":"", "ignition":"0", "door":"0", "hood":"0", "volume":"0", "water_temp":"", "oil_pressure":"0", "main_voltage":13.28, "fuel":"", "analog3":0.09, "siren":"0", "lock":"0", "int_lights":"0", "datetime_utc":"20230902135246", "datetime_actual":"20230902135240", "address":"PA, Towanda, Main Street", "perimeter":"", "color":2, "soc":95, "tipover":0, "charging":0, "chargecomplete":1, "pluggedin":1, "chargingtimeleft":0, "storage":0}]
+[{"unitnumber":"1234567", "name":"538ZFDZ00ABC12345", "unittype":"5",
+"unitmodel":"6", "analog1":0.09, "analog2":0.09, "mileage":"12345.6",
+"software_version":"221208", "logic_state":"1", "reason":"5", "response":"0",
+"driver":"0", "longitude":-74.5678, "latitude":45.6789, "altitude":"123",
+"gps_valid":"1", "gps_connected":"1", "satellites":"7", "velocity":"0",
+"heading":"110", "emergency":"0", "shock":"", "ignition":"0", "door":"0",
+"hood":"0", "volume":"0", "water_temp":"", "oil_pressure":"0", "main_voltage":13.28,
+"fuel":"", "analog3":0.09, "siren":"0", "lock":"0", "int_lights":"0",
+"datetime_utc":"20230902135246", "datetime_actual":"20230902135240",
+"address":"PA, Towanda, Main Street", "perimeter":"", "color":2, "soc":95,
+"tipover":0, "charging":0, "chargecomplete":1, "pluggedin":1,
+"chargingtimeleft":0, "storage":0}]
 ```
-
+(Spaces and linebreaks were added for clarity.)
 
 # Step 3
 
