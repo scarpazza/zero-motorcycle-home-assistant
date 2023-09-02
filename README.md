@@ -45,7 +45,7 @@ Ensure you receive a reply similar to the following:
 ```
 (Spaces and linebreaks were added for clarity.)
 
-# Step 3
+# Step 3 - add secrets
 
 Edit file `secrets.yaml` and add the following lines:
 
@@ -56,17 +56,24 @@ zero_motorcycles_password: your_password
 ```
 (with your own data, of course, replacing the sample data above)
 
-# Step 4
+# Step 4 - add rest configuration
 
 In `configuration.yaml` add a line:
 ```
-rest: !rest.yaml
+rest: !include rest.yaml
 ```
-Create a new file called `rest.yaml` with the contents in [rest.yaml](rest.yaml)
+Then, create a new file called [rest.yaml](rest.yaml) with the contents provided here.
 
+# Step 5 - add template sensors
 
+In `configuration.yaml`, under section `sensor:` add lines like the following:
 
+```
+sensor:
+ - platform: template
+   sensors: !include zero_motorcycle_sensors.yaml
+```
+Then, create a new file called [zero_motorcycle_sensors.yaml](zero_motorcycle_sensors.yaml) with the contents provided here.
 
-# to do templates
 # to do dashboard                                   
 
