@@ -1,5 +1,10 @@
+# Zero Motorcycles integration into Home Assistant
 
-# Step 1
+Caveat: I tested this on my 2023 SR/F.
+Please report malfunctions.
+
+
+## Step 1
 
 Determine your motorcycle's unit number
 
@@ -18,7 +23,7 @@ The output will look like the following
 ```
 Make a record of your unit number.
 
-# Step 2
+## Step 2
 
 Test the REST API:
 
@@ -45,7 +50,7 @@ Ensure you receive a reply similar to the following:
 ```
 (Spaces and linebreaks were added for clarity.)
 
-# Step 3 - add secrets
+## Step 3 - add secrets
 
 Edit file `secrets.yaml` and add the following lines:
 
@@ -56,7 +61,7 @@ zero_motorcycles_password: your_password
 ```
 (with your own data, of course, replacing the sample data above)
 
-# Step 4 - add rest configuration
+## Step 4 - add rest configuration
 
 In `configuration.yaml` add a line:
 ```
@@ -64,7 +69,7 @@ rest: !include rest.yaml
 ```
 Then, create a new file called [rest.yaml](rest.yaml) with the contents provided here.
 
-# Step 5 - add template sensors
+## Step 5 - add template sensors
 
 In `configuration.yaml`, under section `sensor:` add lines like the following:
 
@@ -75,5 +80,10 @@ sensor:
 ```
 Then, create a new file called [zero_motorcycle_sensors.yaml](zero_motorcycle_sensors.yaml) with the contents provided here.
 
-# to do dashboard                                   
+## Step 6 - add a new UI view 
+
+Edit your desired dashboard, clicking on the "..." menu and selecting "Raw configuration editor".
+Add the contents of [lovelace_raw_additions.yaml](lovelace_raw_additions.yaml).
+
+Boom. You are done.
 
