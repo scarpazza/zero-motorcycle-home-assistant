@@ -27,6 +27,10 @@ zero_srf_charging:
   friendly_name: "Zero SR/F Charging"
   value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['charging'] }}"
 
+zero_srf_chargecomplete:
+  friendly_name: "Zero SR/F Charge Complete"
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['chargecomplete'] }}"
+  
 zero_srf_aux_pluggedin:
   friendly_name: "Zero SR/F Plugged in"
   value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['pluggedin'] }}"
