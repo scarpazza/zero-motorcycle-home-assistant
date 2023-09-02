@@ -1,0 +1,32 @@
+zero_srf_soc:
+  friendly_name: "Zero SR/F state of charge"
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['soc'] | int }}"
+  unit_of_measurement: '%'
+
+zero_srf_miles:
+  friendly_name: "Zero SR/F mileage"
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['mileage'] | float}}"
+  unit_of_measurement: mi
+
+zero_srf_speed:
+  friendly_name: "Zero SR/F speed"
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['velocity'] | float}}"
+  unit_of_measurement: mph
+
+zero_srf_aux_battery:
+  friendly_name: "Zero SR/F Aux Battery Voltage"
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['main_voltage'] | float}}"
+  unit_of_measurement: V
+
+
+zero_srf_tipover:
+  friendly_name: "Zero SR/F Tipover"
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['tipover'] }}"
+
+zero_srf_charging:
+  friendly_name: "Zero SR/F Charging"
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['charging'] }}"
+
+zero_srf_aux_pluggedin:
+  friendly_name: "Zero SR/F Plugged in"
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['pluggedin'] }}"
