@@ -1,0 +1,28 @@
+- scan_interval: 120
+    resource: https://mongol.brono.com/mongol/api.php?commandname=get_last_transmit&format=json 
+    method: POST
+    params:                                                                                                                                                                          
+      unitnumber: !secret zero_motorcycles_unitnumber
+      format: json
+      user: !secret zero_motorcycles_username
+      pass: !secret zero_motorcycles_password
+    sensor:
+      - name: "Zero SRF Motorcycle"
+        value_template: OK                                                                                                                                                           
+        json_attributes:
+           - soc       
+           - charging
+           - address 
+           - unitnumber
+           - name 
+           - mileage
+           - main_voltage 
+           - longitude
+           - latitude
+           - altitude
+           - soc
+           - address
+           - tipover
+           - charging
+           - chargecomplete
+           - chargingtimeleft
