@@ -1,0 +1,97 @@
+  - theme: Backend-selected
+    title: Zero SR/F
+    path: motorcycle
+    icon: mdi:motorbike-electric
+    badges: []
+    cards:
+      - type: gauge
+        entity: sensor.zero_srf_soc
+        severity:
+          green: 45
+          yellow: 55
+          red: 110
+      - type: entities
+        entities:
+          - entity: sensor.zero_srf_motorcycle
+            icon: mdi:motorbike-electric
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: State of charge
+            attribute: soc
+            icon: mdi:battery
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: Charging
+            attribute: charging
+            icon: mdi:battery-charging
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: Charge complete
+            attribute: chargecomplete
+            icon: mdi:clock-check
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: Charging Time Left
+            attribute: chargingtimeleft
+            icon: mdi:clock-fast
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: Plugged in
+            attribute: pluggedin
+            icon: mdi:ev-station
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: mileage
+            attribute: mileage
+            icon: mdi:gauge
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: main_voltage
+            attribute: main_voltage
+            icon: mdi:car-battery
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: Address
+            attribute: address
+            icon: mdi:map-marker
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: VIN
+            attribute: name
+            icon: mdi:numeric
+          - type: attribute
+            entity: sensor.zero_srf_motorcycle
+            name: Altitude
+            attribute: altitude
+            icon: mdi:altimeter
+      - type: map
+        entities:
+          - sensor.zero_srf_motorcycle
+      - type: history-graph
+        entities:
+          - entity: sensor.zero_srf_soc
+        title: State of charge
+        hours_to_show: 168
+      - type: history-graph
+        entities:
+          - sensor.zero_srf_miles
+        hours_to_show: 100
+        title: Mileage
+      - type: history-graph
+        entities:
+          - entity: sensor.zero_srf_speed
+        title: Speed
+        hours_to_show: 168
+      - type: history-graph
+        entities:
+          - entity: sensor.zero_srf_aux_battery
+        title: Aux Battery
+        hours_to_show: 168
+      - type: history-graph
+        title: 1-week status
+        hours_to_show: 168
+        entities:
+          - entity: sensor.zero_srf_tipover
+          - entity: sensor.zero_srf_charging
+          - entity: sensor.zero_srf_aux_pluggedin
+          - entity: sensor.zero_srf_chargecomplete
