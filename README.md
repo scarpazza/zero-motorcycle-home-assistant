@@ -1,8 +1,12 @@
 # Zero Motorcycles integration into Home Assistant
 
-Caveat: I tested this on my 2023 SR/F.
-Please report malfunctions.
+Caveat: 
+- I tested this on my 2023 SR/F.
+- Please report malfunctions.
 
+References: 
+- https://community.home-assistant.io/t/zero-motocycles-integrations-in-home-assistant/203255
+- https://www.electricmotorcycleforum.com/boards/index.php?topic=9520.0
 
 ## Step 1
 
