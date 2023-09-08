@@ -5,12 +5,14 @@ zero_srf_soc:
 
 zero_srf_miles:
   friendly_name: "Zero SR/F mileage"
-  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['mileage'] | float}}"
+  # for some reason, the zero returns mileage in km
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['mileage'] | float / 1.60934 }}"
   unit_of_measurement: mi
 
 zero_srf_speed:
   friendly_name: "Zero SR/F speed"
-  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['velocity'] | float}}"
+  # for some reason, the Zero returns speed in km/h
+  value_template: "{{ states.sensor.zero_srf_motorcycle.attributes['velocity'] | float / 1.60934 }}"
   unit_of_measurement: mph
 
 zero_srf_aux_battery:
