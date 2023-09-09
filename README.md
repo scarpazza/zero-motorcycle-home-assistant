@@ -1,5 +1,7 @@
 # Zero Motorcycles integration into Home Assistant
 
+![Dashboard screenshot](dashboard.png)
+
 Caveat: 
 - I tested this on my 2023 SR/F.
 - Please report malfunctions.
